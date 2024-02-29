@@ -17,15 +17,16 @@ def get_requirements(filepath: str)-> List[str]:
 
         if Hypen_e_dot in requirements:
             requirements.remove(Hypen_e_dot)
-
-    return requirements
+    requirements.remove('-e .')
+    print(requirements)
+    return requirements 
 
 # this will create packages of my project like any package in python , this will get automatically get triggered due to -e. in requiremets.txt 
 setup(
     name='End-To-End-Machine-Learning-Project',
     version='0.0.1',
     author='Anirudh1731',
-    author_mail='anirudhsanthosh1729@gmail.com',
+    author_email='anirudhsanthosh1729@gmail.com',
     packages=find_packages(),
     install_requires=get_requirements('requirements.txt')
 )
